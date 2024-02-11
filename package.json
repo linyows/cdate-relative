@@ -1,0 +1,19 @@
+{
+  "name": "cdate-schedule",
+  "version": "0.0.1",
+  "description": "Calendar time for cdate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linyows/cdate-schedule.git"
+  },
+  "author": "linyows",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linyows/cdate-schedule/issues"
+  },
+  "homepage": "https://github.com/linyows/cdate-schedule#readme"
+}
