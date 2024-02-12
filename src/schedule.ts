@@ -14,7 +14,7 @@ const cleared = 'T00:00:00.000Z'
 //   last: 'Last',
 // }
 
-export function scheduleFormat (cd: cdate.cdate, iso8601: string, specificNow?: Date) {
+export function format (cd: cdate.cdate, iso8601: string, specificNow?: Date) {
   const isDateTime = iso8601.substring(10, 24) !== cleared
 
   // Now in Timezone
@@ -79,19 +79,19 @@ interface CDateSchedule extends cdate.CDateFormat {
 
 type scheduleFn = (dt?: string | number | Date) => CDateSchedule
 
-export const schedulePlugin: cdate.Plugin<CDateSchedule> = (Parent) => {
+export const plugin: cdate.Plugin<CDateSchedule> = (Parent) => {
   return class SchedulePlugin extends Parent implements CDateSchedule {
-    locale(lang: string) {
-      // @ts-ignore
-      this.x.lang = lang
-      return super.locale(lang)
-    }
+    // locale(lang: string) {
+    //   // @ts-ignore
+    //   this.x.lang = lang
+    //   return super.locale(lang)
+    // }
 
     schedule() {
       const out = this.inherit()
       // @ts-ignore
-      const lang = this.x.lang
-      return scheduleFormat(this.cdateFn(), out.toDate().toString())
+      //const lang = this.x.lang
+      return format(this.cdateFn(), out.toDate().toString())
     }
 
     scheduleFn() {
