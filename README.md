@@ -1,5 +1,7 @@
-Schedule format as Cdate Plugin
+cdate-schedule
 ==
+
+This is [cdate](https://github.com/kawanet/cdate) plugin for schedule format.
 
 Usage
 --
@@ -23,3 +25,8 @@ const nextWeek = new Date(now.getFullYear(), now.getMonth(), now.getDate()+5)
 console.log(date(nextWeek).schedule())
 // Next Monday 11:02 AM
 ```
+
+Author
+--
+
+[@linyows](https://github.com/linyows)
