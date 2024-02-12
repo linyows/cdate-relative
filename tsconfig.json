@@ -6,10 +6,10 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "declaration": true,
-    "declarationDir": "dist/exporter",
+    "declarationDir": "dist",
     "sourceMap": true,
-    "rootDir": "src/exporter",
-    "outDir": "dist/exporter",
+    "rootDir": "src",
+    "outDir": "dist",
     "resolveJsonModule": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -17,9 +17,6 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "src/**/*"
-  ],
   "exclude": [
     "node_modules",
     "dist",
