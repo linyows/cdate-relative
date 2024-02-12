@@ -1,2 +1,1 @@
-import { schedule } from './schedule'
-export schedule
+export * from './schedule.js'
