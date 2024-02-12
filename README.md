@@ -3,6 +3,8 @@ cdate-schedule
 
 This is [cdate](https://github.com/kawanet/cdate) plugin for schedule format.
 
+[![Build Status](https://img.shields.io/github/actions/workflow/status/linyows/cdate-schedule/build.yml?branch=main&style=for-the-badge)](https://github.com/linyows/cdate-schedule/actions)
+
 Usage
 --
 
