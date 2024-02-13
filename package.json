@@ -1,7 +1,7 @@
 {
-  "name": "cdate-schedule",
+  "name": "cdate-relative",
   "version": "0.0.1",
-  "description": "Schedule format as cdate plugin",
+  "description": "Relative format as cdate plugin",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -23,6 +23,7 @@
     "date",
     "time",
     "cdate",
+    "relative",
     "calendar"
   ],
   "scripts": {
@@ -32,14 +33,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/linyows/cdate-schedule.git"
+    "url": "git+https://github.com/linyows/cdate-relative.git"
   },
   "author": "linyows",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/linyows/cdate-schedule/issues"
+    "url": "https://github.com/linyows/cdate-relative/issues"
   },
-  "homepage": "https://github.com/linyows/cdate-schedule#readme",
+  "homepage": "https://github.com/linyows/cdate-relative#readme",
   "devDependencies": {
     "@types/node": "^20.11.17",
     "cdate": "^0.0.7",
