@@ -1,7 +1,7 @@
 {
   "name": "cdate-relative",
   "version": "0.0.1",
-  "description": "Relative format as cdate plugin",
+  "description": "Relative format as cdate handler",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",

@@ -1,7 +1,7 @@
 cdate-relative
 ==
 
-This is a [cdate](https://github.com/kawanet/cdate) plugin for relative format.
+This is a [cdate](https://github.com/kawanet/cdate) handler for relative format.
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/linyows/cdate-relative/build.yml?branch=main&style=for-the-badge)](https://github.com/linyows/cdate-relative/actions)
 

@@ -81,7 +81,7 @@ test('format returns correct when over last week past and over next week future'
   }
 })
 
-test('handler is works as cdate plugin', async () => {
+test('handler is works as cdate handler', async () => {
   const target = '2023-02-10T00:00:00.000Z'
   const cal = cdate().handler(relative).cdateFn()
   const got = cal(target).format('R H:mm A')
@@ -89,7 +89,7 @@ test('handler is works as cdate plugin', async () => {
   assert.equal(got, want)
 })
 
-test('handler with locale is works as cdate plugin', async () => {
+test('handler with locale is works as cdate handler', async () => {
   const target = '2023-02-10T00:00:00.000Z'
   const cal = cdate().handler(relativeWith({ others: 'YYYY年M月DD日' })).cdateFn()
   const got = cal(target).locale('ja').format('R AH:mm')
