@@ -150,7 +150,8 @@ export function getFromNow (d: cdate.DateLike, options: Options = defaultOptions
 
 export function relativeWith(labels?: Labels): cdate.Handlers {
   return {
-    "R": (dt: cdate.DateLike) => getRelativeDate(dt, { labels })
+    "R": (dt: cdate.DateLike) => getRelativeDate(dt, { labels }),
+    "F": (dt: cdate.DateLike) => getFromNow(dt, { labels }),
   }
 }
 
