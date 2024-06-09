@@ -1,6 +1,6 @@
 import { test } from 'uvu'
 import * as assert from 'uvu/assert'
-import { getRelativeDate, relative, relativeWith } from './relative'
+import { getRelativeDate, relative, relativeWith, getFromNow } from './relative'
 import { cdate } from 'cdate'
 
 // Today is Saturday
