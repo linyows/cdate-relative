@@ -24,6 +24,14 @@ const defaultOptions = {
     last: 'Last',
     week: 'dddd',
     others: 'MMMM D, YYYY',
+    past: '%s ago',
+    future: 'in %s',
+    seconds: 'seconds',
+    minutes: 'minutes',
+    hours: 'hours',
+    days: 'days',
+    months: 'months',
+    years: 'years',
   },
 }
 
@@ -90,6 +98,54 @@ export function getRelativeDate (d: cdate.DateLike, options: Options = defaultOp
 
   // When past than last week or future from next week
   return targetDateTime
+}
+
+export function getFromNow (d: cdate.DateLike, options: Options = defaultOptions) {
+  const unixFormat = 'X'
+  const iso8601 = d.toString()
+
+  const { specificNow, labels } = {
+    specificNow: options.specificNow,
+    labels: { ...defaultOptions.labels, ...options.labels },
+  }
+
+  const secInMin = 60
+  const secInHour = 60 * secInMin
+  const secInDay = 24 * secInHour
+  const secInMonth = 30 * secInDay
+  const secInYear = 365 * secInDay
+
+  const dateNow = specificNow ? specificNow : new Date(Date.now())
+  const now = +cdate(dateNow).format(unixFormat)
+  const target = +cdate(iso8601).format(unixFormat)
+
+  // Future or Past seconds
+  const diff = (now < target) ? target - now : now - target
+
+  let words = ''
+
+  switch (true) {
+    case diff < secInMin:
+      words = `${diff} ${labels.seconds}`
+      break
+    case diff < secInHour:
+      words = `${Math.floor(diff / secInMin)} ${labels.minutes}`
+      break
+    case diff < secInDay:
+      words =  `${Math.floor(diff / secInHour)} ${labels.hours}`
+      break
+    case diff < secInMonth:
+      words = `${Math.floor(diff / secInDay)} ${labels.days}`
+      break
+    case diff < secInYear:
+      words = `${Math.floor(diff / secInMonth)} ${labels.months}`
+      break
+    default:
+      words = `${Math.floor(diff / secInYear)} ${labels.years}`
+      break
+  }
+
+  return ((now < target) ? labels.future : labels.past).replace('%s', words)
 }
 
 export function relativeWith(labels?: Labels): cdate.Handlers {
